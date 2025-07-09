@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('{% static "piii.jpeg" %}');
+            background-color: #0000ff80;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            backdrop-filter: blur(5px); 
+            background-size: cover;
+        }
+
+        h2 {
+            text-align: center;
+            color: 	#C0FFF4;
+            margin: 10px 0;
+        }
+
+        p {
+            text-align: center;
+            color: 	#C0FFF4;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Results</h2>
+    <p>Real Profile Pic is: {{ is_real_profile_pic }}</p> 
+    <p>Content Type: {{ content_type }}</p>
+</body>
+</html>

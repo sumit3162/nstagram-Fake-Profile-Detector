@@ -1,0 +1,69 @@
+<!-- detector_app/templates/home.html -->
+{% load static %}
+<html>
+<head>
+    <style>
+        
+        body {
+            background-image: url('{% static "pics.png" %}');
+            background-color: blue;
+            background-size: cover; 
+            background-position: center;
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px); 
+        }
+        
+
+        h2, form {
+            text-align: center;
+            color : cyan;
+            text-shadow :  2px 2px  8px #12AD2B;
+        }
+
+        form {
+            max-width: 400px; 
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #800080; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #800080; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Instagram Fake Profile Detector</h2>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <label for="profile_url">Enter Instagram Profile URL:</label>
+        <input type="text" id="profile_url" name="profile_url" required>
+        <button type="submit">Check Profile</button>
+    </form>
+</body>
+</html>
